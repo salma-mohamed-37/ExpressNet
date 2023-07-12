@@ -1,0 +1,29 @@
+.navbar
+{
+    background-color: #cc0099;
+    padding: 5px;
+    color:white;
+    font-size:xx-large;
+    height:40px;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+a
+{
+    text-decoration: none;
+}
+
+.navbarButtons
+{
+    color:white;
+    float: right;
+    background-color: #cc0099;
+    border: none;
+    font-size:xx-large;
+    font-family: 'Times New Roman', Times, serif;
+}
+.navbarButtons:hover
+{
+    cursor: pointer;
+}

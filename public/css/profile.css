@@ -1,0 +1,80 @@
+body
+{
+    font-size: larger;
+}
+textarea
+{
+    resize: none;
+    width: 20cm;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.post
+{
+    width: 20cm;
+    border: 1px solid  #cc0099;
+    padding: 10px;
+}
+
+
+textarea:focus
+ {
+    outline: none;
+}
+
+.profile
+{
+    border: 2PX #cc0099 solid ;
+    width: 22cm;
+    margin: auto;
+    padding: 10px;
+}
+
+.profButton
+{
+    border: 2px solid  #cc0099;
+    color :#cc0099;
+    background-color: white;
+    font-weight: bold;
+    font-size: large;
+}
+
+.profButton:hover
+{
+    cursor: pointer;
+}
+
+.postContent
+{
+    border: 1px solid  #cc0099;
+    color:black;
+}
+
+.react
+{
+    color: #cc0099;
+}
+
+.react:hover
+{
+    cursor: pointer;
+}
+
+input[type=text]
+{
+    width: 15cm;
+    height: fit-content;
+}
+
+.date
+{
+    float: right;
+    font-size: small;
+}
+
+.comment
+{
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+}
