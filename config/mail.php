@@ -99,8 +99,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'getintouchwebsite@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'GetinTouch website'),
+        'address' => env('MAIL_FROM_ADDRESS', 'expressnetwebsite@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'ExpressNet'),
     ],
 
     /*

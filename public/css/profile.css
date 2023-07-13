@@ -16,9 +16,8 @@ textarea
     padding: 10px;
 }
 
-
 textarea:focus
- {
+{
     outline: none;
 }
 
@@ -77,4 +76,9 @@ input[type=text]
     border: 1px solid gray;
     border-radius: 5px;
     padding: 5px;
+}
+
+.comment:focus
+{
+    outline: none;
 }
