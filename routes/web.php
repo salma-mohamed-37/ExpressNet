@@ -34,7 +34,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::GET("/explore",[PostController::class , 'explore'])->middleware(['auth', 'verified']);
+Route::GET("/explore",[PostController::class , 'explore'])->middleware(['auth', 'verified'])->name('explore');;
 
 Route::POST('/add', [PostController::class,'store'])->middleware(['auth', 'verified']);
 Route::GET('/delete/{id}' ,[PostController::class,'destroy'])->middleware(['auth', 'verified']);

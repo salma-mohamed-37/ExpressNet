@@ -2,12 +2,21 @@
 <html lang="en">
 <head>
     <title>Homepage</title>
+    <style>
+        .home
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+    </style>
 </head>
 <body>
 
     @extends('new.navbar')
     @section('content')
-    <div style="font-size:xx-large;">Welcome To Home Page</div>
+    <section style="font-size:xx-large;" class="home">It is the suitable for sharing your thoughts <br/>and opinions and read others’</section>
      @endsection
 
 </body>

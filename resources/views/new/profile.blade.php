@@ -11,7 +11,7 @@
 
     <div class=profile>
         Hello {{auth()->user()->name}}  <br/> <br/>
-        <form method=POST action=add />
+        <form method=POST action=add >
         @csrf
             <textarea placeholder="Enter your post here" rows=3 name=content></textarea>
             <input type=submit value="POST" class=profButton />

@@ -2,24 +2,23 @@
 <html lang="en">
 <head>
     <link rel=stylesheet href="{{ asset('css/navbar.css') }}" >
-    <script src="https://kit.fontawesome.com/bdc1a26774.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class=navbar>
-       <span style="font-weight:bold"><i class="fa-solid fa-earth-americas"> </i> ExpressNet</span>
+       <span style="font-weight:bold">ExpressNet</span>
 
        @if (Route::has('login'))
         @auth
-            <a href= {{route('profile.edit')}} class=navbarButtons>Profile</a>
+            <input type=button value=Profile class=navbarButtons onclick="window.location.href=&quot;{{ route('profile.edit') }}&quot;" />
             <form method="POST" action="{{ route('logout') }}" style="display: inline-block; float: right;">
                 @csrf
-                <input type="submit" value='Log Out ||' class=navbarButtons >
+                <input type="submit" value='Log Out' class=navbarButtons />
             </form>
-            <a href= '/explore' class=navbarButtons>Explore ||</a>
-            <a href= '/dashboard' class=navbarButtons>Your Posts ||</a>
+            <input type=button value=Explore class=navbarButtons onclick="window.location.href=&quot;{{ route('explore') }}&quot;"/>
+            <input type=button value="Your posts" class=navbarButtons onclick="window.location.href=&quot;{{ route('dashboard') }}&quot;"/>
         @else
-            <a href="{{ route('login') }}" class=navbarButtons > Log in</a>
-            <a href="{{ route('register') }}" class=navbarButtons >Register || </a>
+            <input type=button value="Login" class=navbarButtons onclick="window.location.href=&quot;{{ route('login') }}&quot;" />
+            <input type=button value="Register" class=navbarButtons onclick="window.location.href=&quot;{{ route('register') }}&quot;"/>
         @endauth
     @endif
     </div>
