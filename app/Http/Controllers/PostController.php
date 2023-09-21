@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
-    public function viewMainPage()
+    public function viewAccountPosts()
     {
         $posts = Post::where('user_id',Auth::id())
         ->orderBy('created_at','desc')

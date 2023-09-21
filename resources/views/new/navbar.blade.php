@@ -14,8 +14,8 @@
                 @csrf
                 <input type="submit" value='Log Out' class=navbarButtons />
             </form>
-            <input type=button value=Explore class=navbarButtons onclick="window.location.href=&quot;{{ route('explore') }}&quot;"/>
-            <input type=button value="Your posts" class=navbarButtons onclick="window.location.href=&quot;{{ route('dashboard') }}&quot;"/>
+            <input type=button value=Explore class=navbarButtons onclick="window.location.href=&quot;{{ route('dashboard') }}&quot;"/>
+            <input type=button value="Your posts" class=navbarButtons onclick="window.location.href=&quot;{{ route('profilePosts') }}&quot;"/>
         @else
             <input type=button value="Login" class=navbarButtons onclick="window.location.href=&quot;{{ route('login') }}&quot;" />
             <input type=button value="Register" class=navbarButtons onclick="window.location.href=&quot;{{ route('register') }}&quot;"/>

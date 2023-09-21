@@ -23,8 +23,10 @@ Route::get('/', function () {
     return view('new.index');
 });
 
-Route::get('/dashboard', [PostController::class , 'viewMainPage'])
+Route::get('/dashboard', [PostController::class , 'explore'])
 ->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/profilePosts',[PostController::class , 'viewAccountPosts'])->middleware(['auth', 'verified'])->name('profilePosts');;
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -34,7 +36,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::GET("/explore",[PostController::class , 'explore'])->middleware(['auth', 'verified'])->name('explore');;
+//Route::GET("/explore",[PostController::class , 'explore'])->middleware(['auth', 'verified'])->name('dashboard');;
 
 Route::POST('/add', [PostController::class,'store'])->middleware(['auth', 'verified']);
 Route::GET('/delete/{id}' ,[PostController::class,'destroy'])->middleware(['auth', 'verified']);

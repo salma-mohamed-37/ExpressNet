@@ -9,6 +9,7 @@
             justify-content: center;
             align-items: center;
             height: 80vh;
+            text-align: center
         }
     </style>
 </head>
