@@ -28,3 +28,13 @@
     cursor: pointer;
     border-bottom: 2px solid white ;
 }
+
+.errorMessage
+{
+  background-color: rgb(255, 63, 63);
+  color: rgb(129, 3, 3);
+  border: 1px solid rgb(129, 3, 3) ;
+  width: fit-content;
+  padding:4px;
+  font-size: 1rem;
+}
