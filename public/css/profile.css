@@ -1,19 +1,39 @@
+*
+{
+    font-family: 'Times New Roman', Times, serif;
+}
+
 body
 {
     font-size: larger;
 }
-textarea
+
+a
 {
-    resize: none;
-    width: 20cm;
-    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    color:black;
+}
+.profile
+{
+    width: 100%;
+    background-color: #F1F1f1;
+    margin: auto;
+    padding: 7px;
+    box-sizing: border-box;
 }
 
 .post
 {
-    width: 20cm;
-    border: 1px solid  #cc0099;
-    padding: 10px;
+    background-color: white;
+    margin:10px;
+    padding: 7px;
+}
+
+textarea
+{
+    resize: none;
+    width: calc(100% - 5.5rem);
+    border: none;
 }
 
 textarea:focus
@@ -21,37 +41,34 @@ textarea:focus
     outline: none;
 }
 
-.profile
+.postContent
 {
-    border: 2PX #cc0099 solid ;
-    width: 22cm;
-    margin: auto;
-    padding: 10px;
+    border:3px solid  rgba(241, 241, 241,0.5);
+    color:black;
+    padding:0.5rem;
 }
 
 .profButton
 {
-    border: 2px solid  #cc0099;
-    color :#cc0099;
-    background-color: white;
-    font-weight: bold;
-    font-size: large;
+    border:none;
+    background-color:#f8beea;
+    color:#cc0099;
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding: 2px 6px;
 }
 
 .profButton:hover
 {
+    background-color:#f79ce3;
+    color:#cc0099;
+    padding: 2px 6px;
     cursor: pointer;
-}
-
-.postContent
-{
-    border: 1px solid  #cc0099;
-    color:black;
 }
 
 .react
 {
-    color: #cc0099;
+    margin:5px;
 }
 
 .react:hover
@@ -59,10 +76,9 @@ textarea:focus
     cursor: pointer;
 }
 
-input[type=text]
+.fa-solid
 {
-    width: 15cm;
-    height: fit-content;
+    color:#cc0099;
 }
 
 .date
@@ -82,3 +98,5 @@ input[type=text]
 {
     outline: none;
 }
+
+

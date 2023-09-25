@@ -7,6 +7,7 @@ h2,a
 {
     color:#cc0099;
 }
+
 .container
 {
     display: flex;
@@ -30,6 +31,15 @@ input[type=submit]
     color:#cc0099;
     font-weight: 600;
     font-size: 1rem;
+    padding: 2px 6px;
+}
+
+input[type=submit]:hover
+{
+    background-color:#f79ce3;
+    color:#cc0099;
+    padding: 2px 6px;
+    cursor: pointer;
 }
 
 input[type=text] , input[type=password], input[type=email]
