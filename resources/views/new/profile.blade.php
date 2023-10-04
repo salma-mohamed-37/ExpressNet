@@ -28,7 +28,7 @@
                     <input type=submit value="Delete" class=profButton />
                 </form>
             </div>
-            <br/> <br/>
+            <br/><br/>
 
             <div class=postContent> {!! $post['post']->content !!}</div>
 
