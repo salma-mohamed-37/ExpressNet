@@ -58,12 +58,12 @@ class PostController extends Controller
     public function store(Request $request)
     {
         Post::create([
-            'content'=> $request->content,
+            'content'=> nl2br($request->content),
             'user_id' => Auth::user()->id
 
         ]);
 
-        return redirect()->route('dashboard');
+        return redirect()->route('profilePosts');
     }
 
     /**
@@ -72,6 +72,6 @@ class PostController extends Controller
     public function destroy($id)
     {
         Post::destroy($id);
-        return redirect()->route('dashboard');
+        return redirect()->route('profilePosts');
     }
 }

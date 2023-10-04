@@ -10,76 +10,48 @@
     @extends('new.navbar')
     @section('content')
 
-    <div class=profile>
-        Hello {{auth()->user()->name}}  <br/> <br/>
+    <main class=profile>
+        <div style="background-color: rgba(241, 241, 241,0.5)">
         <form method=POST action=add >
-        @csrf
-            <textarea placeholder="Enter your post here" rows=3 name=content></textarea>
+            @csrf
+            <textarea placeholder="Enter your post here" rows=3 name=content class="addPost"></textarea>
             <input type=submit value="Post" class=profButton />
         </form>
-       <br/> Your Posts <br/>
+        </div>
+       <p>Your posts </p>
 
         @foreach ($postData as $post)
-            <div class=post>
+        <div class=post>
+            <div class=title>
                 {{$post['user']}} posted
-                <form method =GET action="delete/{{ $post['post']->id }}" style="float:right;">
+                <form method =GET action="delete/{{ $post['post']->id }}">
                     <input type=submit value="Delete" class=profButton />
                 </form>
-                <br/> <br/>
-
-                <div class=postContent >
-                    {{$post['post']->content}}
-                </div>
-
-                <div style="display: flex;">
-                    <p class="react">
-                        <i class="fa-solid fa-thumbs-up"></i> <br/>
-                        <span onclick="like('{{ $post['post']->id }}')" id='react-{{ $post['post']->id }}'> @if ($post['isLiked']) liked @else like @endif</span><br/>
-                        <a href="/likes/{{ $post['post']->id }}"> view likes</a>
-                    </p>
-                    <p class="react">
-                        <i class="fa-solid fa-comment"></i> <br/>
-                        <span>Comment</span> <br/>
-                        <a href="/comments/{{ $post['post']->id }}"> view Comments</a>
-                    </p>
-                </div>
-
-                <!--
-                <span class="react"  onclick="like('{{ $post['post']->id }}')" id='react-{{ $post['post']->id }}'><i class="fa-solid fa-thumbs-up"></i> <br>
-                    @if ($post['isLiked']) liked @else like @endif
-                </span>
-                <br/>
-            -->
-<!--
-                <span class="react" id='likes-{{ $post['post']->id }}'  >
-                     {{ $post['likes']}} Likes
-                </span>
-                <br/>
-            -->
-            <!--
-                <span>
-                    <a href="/likes/{{ $post['post']->id }}" class="react"> view likes</a>
-                </span>
-
-                <br/>
-            -->
-            <!--
-                <span>
-                    <input type=text name=comment id='comment-{{ $post['post']->id }}'/>
-                    <input type=button class=profButton value="COMMENT" onclick="comment('{{$post['post']->id}}' )" />
-                </span>
-
-                <br/>
-
-                <span>
-                    <a href="/comments/{{ $post['post']->id }}" class="react"> view Comments</a>
-                </span>
-            -->
             </div>
+            <br/> <br/>
+
+            <div class=postContent> {!! $post['post']->content !!}</div>
+
+            <div class= "react-container">
+                <p class="react">
+                    <span onclick="like('{{ $post['post']->id }}')"> <i class="fa-solid fa-thumbs-up"></i> <br/><span  id='like-{{ $post['post']->id }}'> @if ($post['isLiked']) liked @else like @endif</span><br/></span>
+                    <a href="/likes/{{ $post['post']->id }}">Likes</a>
+                </p>
+                <p class="react">
+                    <span onclick="viewCommentBox({{ $post['post']->id }})"><i class="fa-solid fa-comment"></i> <br/>Comment</span> <br/>
+                    <a href="/comments/{{ $post['post']->id }}">Comments</a>
+                </p>
+            </div>
+            <div class="comment-container" id='comment-container-{{ $post['post']->id }}'>
+                <textarea name=comment id='comment-{{ $post['post']->id }}' class="comment"></textarea>
+                <input type=button class=profButton value="Comment" onclick="comment('{{$post['post']->id}}' )" />
+            </div>
+        </div>
         @endforeach
-    </div>
+    </main>
 
     <script src={{ asset('js/ajax.js') }} ></script>
+    <script src={{ asset('js/profile.js') }} ></script>
     @endsection
 
 </body>

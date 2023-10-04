@@ -1,11 +1,14 @@
 *
 {
     font-family: 'Times New Roman', Times, serif;
+
+
 }
 
 body
 {
     font-size: larger;
+    background-color: #F1F1f1;
 }
 
 a
@@ -13,39 +16,59 @@ a
     text-decoration: none;
     color:black;
 }
+
 .profile
 {
     width: 100%;
     background-color: #F1F1f1;
     margin: auto;
-    padding: 7px;
     box-sizing: border-box;
-}
-
-.post
-{
-    background-color: white;
-    margin:10px;
     padding: 7px;
+    display: flex;
+    flex-direction: column;
 }
 
-textarea
+.title
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+.addPost
 {
     resize: none;
-    width: calc(100% - 5.5rem);
+    width: calc(100% - 4.5rem);
     border: none;
 }
 
-textarea:focus
+.addPost:focus
 {
     outline: none;
 }
 
+.post
+{
+    background-color:white;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+
 .postContent
 {
-    border:3px solid  rgba(241, 241, 241,0.5);
     color:black;
-    padding:0.5rem;
+    box-sizing: border-box;
+}
+
+.post div
+{
+    background-color: white;
+    min-height:fit-content;
 }
 
 .profButton
@@ -56,6 +79,7 @@ textarea:focus
     font-weight: 500;
     font-size: 1.5rem;
     padding: 2px 6px;
+    box-sizing: border-box;
 }
 
 .profButton:hover
@@ -66,9 +90,15 @@ textarea:focus
     cursor: pointer;
 }
 
+.react-container
+{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid  #d6d6d6;
+}
 .react
 {
-    margin:5px;
+    margin: 5px;
 }
 
 .react:hover
@@ -87,11 +117,18 @@ textarea:focus
     font-size: small;
 }
 
+.comment-container
+{
+    display: none;
+    border: 1px solid  #d6d6d6;
+    padding: 3px;
+}
+
 .comment
 {
-    border: 1px solid gray;
-    border-radius: 5px;
-    padding: 5px;
+    resize: none;
+    width: calc(100% - 8.5rem);
+    height: 1rem;
 }
 
 .comment:focus

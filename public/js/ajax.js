@@ -6,11 +6,7 @@ function like (id)
         if(this.status == 200 && this.readyState == 4)
         {
             console.log('receieved');
-            var num = document.getElementById("likes-"+id).textContent;
-            document.getElementById("likes-"+id).textContent = "You and "+num
-            document.getElementById("react-"+id).innerHTML = ' <i class="fa-solid fa-thumbs-up"></i> <br>liked'
-
-
+            document.getElementById("like-"+id).innerHTML = 'liked'
         }
     };
     xmlhttp.open("GET", "like/"+id,true);
