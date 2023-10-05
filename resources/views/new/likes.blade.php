@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Likes</title>
-    <link rel=stylesheet href="{{ asset('css/profile.css') }}" >
+    <link rel=stylesheet href="{{ asset('css/likes&Comments.css') }}" >
 </head>
 <body>
-    <div class=profile>
-        <h1 style="color :  #cc0099"> People who liked the post</h1>
-        <div style="font-size: larger;" id=likes>
+    <div class=likesAndComments>
+        <span class=title> People who liked the post</span> <br/>
+        <div id=likes>
             @foreach ($users as $user)
-                {{$user->name}} <span style="float: right;">{{$user->created_at}}</span><br/>
+                <p class=likeDetails>
+                    <span >{{$user->name}}</span>
+                    <span class=date>{{$user->created_at}}</span>
+                </p>
+                <br/>
             @endforeach
         </div>
     </div>

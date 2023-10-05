@@ -30,7 +30,7 @@
             </div>
             <div class="comment-container" id='comment-container-{{ $post['post']->id }}'>
                 <textarea name=comment id='comment-{{ $post['post']->id }}' class="comment"></textarea>
-                <input type=button class=profButton value="Comment" onclick="comment('{{$post['post']->id}}' )" />
+                <input type=button class=profButton value="Comment" onclick="comment('{{$post['post']->id}}')" />
             </div>
         </div>
          @endforeach
@@ -38,6 +38,5 @@
         <script src={{ asset('js/ajax.js') }} ></script>
         <script src={{ asset('js/profile.js') }} ></script>
     @endsection
-
 </body>
 </html>

@@ -27,7 +27,7 @@ function comment(id)
 
         }
     };
-    xmlhttp.open("GET", "comment/"+id+"/"+content,true);
+    xmlhttp.open("GET", "comment/"+id+"/"+encodeURIComponent(content),true);
     xmlhttp.send();
     console.log('sent');
 }

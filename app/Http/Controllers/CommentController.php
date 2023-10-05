@@ -22,10 +22,12 @@ class CommentController extends Controller
      */
     public function store($id , $content)
     {
+        $decodedContent = urldecode($content);
         Comment::create([
             'user_id'=> Auth::id(),
-            'post_id' => $id ,
-            'content' => $content
+            'content' => nl2br($decodedContent),
+            'post_id' => $id
+
         ]);
     }
 

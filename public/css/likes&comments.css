@@ -1,0 +1,53 @@
+*
+{
+    font-family: 'Times New Roman', Times, serif;
+
+
+}
+
+body
+{
+    font-size: larger;
+    background-color: #F1F1f1;
+}
+
+.title
+{
+    font-size: 2rem;
+    font-weight: 600;
+    display: inline-block;
+    padding: 5px;
+    color :  #cc0099
+}
+
+.name
+{
+    font-weight: 600;
+}
+
+.date
+{
+    float: right;
+    font-size: small;
+}
+
+.likesAndComments
+{
+    background-color: white;
+}
+
+#comments
+{
+    background-color: #F1F1f1;
+    padding: 0.5rem 0px;
+}
+
+.commentDetails
+{
+   background-color: white;
+   margin: 6px 0px;
+   padding: 3px;
+}
+
+#likes
+{padding: 0px 5px;}
