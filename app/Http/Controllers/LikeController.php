@@ -10,6 +10,8 @@ use App\Models\Like;
 use App\Mail\LikeNotification;
 use App\Models\Post;
 
+use function GuzzleHttp\describe_type;
+
 class LikeController extends Controller
 {
     /**
@@ -22,7 +24,12 @@ class LikeController extends Controller
         ->where('likes.post_id' , $id)
         ->select('users.name', 'likes.created_at')
         ->get() ;
-        return view('new.likes' , ['users' => $usersNames]);
+
+        $likes = DB::table('likes')
+        ->where('post_id', $id)
+        ->count();
+
+        return view('new.likes' , ['users' => $usersNames, 'total'=>$likes]);
     }
 
 
@@ -44,6 +51,11 @@ class LikeController extends Controller
             ]);
             $this->sendNotification($id);
         }
+        else
+        {
+            $this->destroy($id);
+        }
+
     }
 
     public function sendNotification($pid)
@@ -58,8 +70,10 @@ class LikeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-
+        Like::where('user_id', Auth::user()->id)
+            ->where('post_id', $id)
+            ->delete();
     }
 }

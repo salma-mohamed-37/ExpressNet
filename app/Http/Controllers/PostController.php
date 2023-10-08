@@ -39,16 +39,11 @@ class PostController extends Controller
             ->where('user_id', Auth::id())
             ->exists();
 
-            $likes = DB::table('likes')
-            ->where('post_id', $post->id)
-            ->count();
-
             $postsData[] =
             [
                 'user' => $post->user->name,
                 'post' => $post,
-                'isLiked'=> $isLiked,
-                'likes' => $likes,
+                'isLiked'=> $isLiked
             ];
         }
         return $postsData ;

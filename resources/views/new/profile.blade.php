@@ -34,7 +34,7 @@
 
             <div class= "react-container">
                 <p class="react">
-                    <span onclick="like('{{ $post['post']->id }}')"> <i class="fa-solid fa-thumbs-up"></i> <br/><span  id='like-{{ $post['post']->id }}'> @if ($post['isLiked']) liked @else like @endif</span><br/></span>
+                    <span onclick="like('{{ $post['post']->id }}')"> <i class="fa-solid fa-thumbs-up"></i> <br/><span  id='like-{{ $post['post']->id }}'> @if ($post['isLiked'])liked @else like @endif</span><br/></span>
                     <a href="/likes/{{ $post['post']->id }}">Likes</a>
                 </p>
                 <p class="react">

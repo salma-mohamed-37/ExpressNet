@@ -7,9 +7,12 @@
 </head>
 <body>
     <div class=likesAndComments>
-        <span class=title> People who commented on the post</span> <br/><br/>
+        <div class=title>
+            <span> Total comments are <span style="color:black">{{$total}} </span>comments</span> <br/>
+            <span>The comments on the post </span>
+        </div>
         <div  id=comments>
-            @foreach ($data as $comment)
+            @foreach ($comments as $comment)
             <div class=commentDetails>
                 <span class=name>{{$comment->name}} </span><br/>
                 {!! $comment->content !!} <br/>

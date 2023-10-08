@@ -7,7 +7,7 @@
         Dear {{$recieverName}} , <br/>
         {{$likeSender}} liked your post. <br/><br/>
     <div style="border:0.5px solid black;width:fit-content;padding:4px;">
-        {{$content}}
+        {!!$content!!}
     </div>
 
     </div>

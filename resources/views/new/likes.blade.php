@@ -7,7 +7,10 @@
 </head>
 <body>
     <div class=likesAndComments>
-        <span class=title> People who liked the post</span> <br/>
+        <div class=title>
+            <span> Total likes are <span style="color:black">{{$total}} </span>likes</span> <br/>
+            <span>People who liked the post </span>
+        </div>
         <div id=likes>
             @foreach ($users as $user)
                 <p class=likeDetails>

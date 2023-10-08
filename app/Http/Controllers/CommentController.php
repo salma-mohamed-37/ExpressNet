@@ -41,7 +41,12 @@ class CommentController extends Controller
         ->where('comments.post_id' , $id)
         ->select('users.name','comments.content','comments.created_at')
         ->get() ;
-        return view('new.comments' , ['data' => $data]);
+
+        $total =  DB::table('comments')
+        ->where('post_id', $id)
+        ->count();
+
+        return view('new.comments' , ['comments' => $data, 'total'=>$total]);
     }
 
     /**
